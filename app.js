@@ -1,15 +1,12 @@
 document.getElementById("search-btn").addEventListener("click", function () {
-    fetch("superheroes.php")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Network response was not OK");
-            }
-            return response.text();
-        })
+    const query = document.getElementById("search-field").value;
+    fetch(`superheroes.php?query=${encodeURIComponent(query)}`)
+        .then(response => response.text())
         .then(data => {
-            alert(data); // Show the list in an alert for now
+            document.getElementById("result").innerHTML = data; // Update result div
         })
         .catch(error => {
             console.error("Error:", error);
+            document.getElementById("result").innerHTML = "<p>Something went wrong. Please try again later.</p>";
         });
 });

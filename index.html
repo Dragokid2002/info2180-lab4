@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intital-scale=1.0">
-    <title>Superheroes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Search</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Avengers Character Search</h1>
-    <button id="search-btn">Search</button>
+    <h1>Marvel Avengers Search</h1>
+    <div id="search-section">
+        <h2 class="search-title">Search for your Character</h2>
+        <input type="text" id="search-field" placeholder="eg. Spiderman or Scarlet Witch">
+        <button id="search-btn">Search</button>
+    </div>
+
+    <div id="result-section">
+        <h2 class="result-title">Result</h2>
+        <div id="result"></div>
+    </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
